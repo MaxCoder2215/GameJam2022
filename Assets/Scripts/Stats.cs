@@ -11,6 +11,7 @@ public class Stats
     public float attack_speed;
     public float defense;
     public float critical_rate;
+    public float gold; 
 
     // Constructor
     public Stats (float hP, float aD, float aS, float dF, float cR)
