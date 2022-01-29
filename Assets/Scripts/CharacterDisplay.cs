@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CharacterDisplay : MonoBehaviour
 {
+    public Player player; 
+
+
     // Start is called before the first frame update
     void Start()
     {
