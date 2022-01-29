@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Item 
 {
-    // Temporary Stat boosts
+    // Temporary Stat boosts.
     public Stats temp_stats;
-    // Permanent Stat increases
+    // Permanent Stat increases.
     public Stats equip_stats;
-    // Item name
+    // Item name.
     public string name;
-    // What it is
+    // What it is.
     public string description;
     // What outside effects it may have.
     public string outside_effect;
@@ -21,39 +21,32 @@ public class Item
     // How often per action or battle the item can be used.
     public int use_cooldown; 
 
-
-    public Item(Stats tempoaryStats, string itemName, string itemDescription, bool destroyAfterUse)
+    // Constructor for an item that is either temporary or equiptable. 
+    public Item(Stats stats, string itemName, string itemDescription, string outsideEffect, int turnCount, bool destroyAfterUse, int useCooldown)
     {
-        temp_stats = tempoaryStats;
-        name = itemName;
-        description = itemDescription;
-        destroy_after_use = destroyAfterUse;
-    }
-
-    public Item(Stats equipStats, string itemName, string itemDescription, int turnCount, bool destroyAfterUse, int useCooldown)
-    {
-        equip_stats = equipStats;
-        name = itemName;
-        description = itemDescription;
-        temp_turn_count
-        destroy_after_use = destroyAfterUse;
-        use_cooldown = useCooldown;
-    }
-
-    public Item(Stats tempoaryStats, string itemName, string itemDescription, string outsideEffect, int turnCount, bool destroyAfterUse, int useCooldown)
-    {
-        temp_stats = tempoaryStats;
+        
         name = itemName;
         description = itemDescription;
         outside_effect = outsideEffect;
         temp_turn_count = turnCount;
         destroy_after_use = destroyAfterUse;
-        use_cooldown = useCooldown; 
+        use_cooldown = useCooldown;
+
+        if (destroyAfterUse)
+        {
+            temp_stats = stats;
+        } else
+        {
+            equip_stats = stats;
+        }
+
+       
     }
 
-    public Item(Stats tempoaryStats, Stats equipStats, string itemName, string itemDescription, string outsideEffect, int turnCount, bool destroyAfterUse, int useCooldown)
+    // Constructor for an item with both temporary stat increases and equipment stats. 
+    public Item(Stats temporaryStats, Stats equipStats, string itemName, string itemDescription, string outsideEffect, int turnCount, bool destroyAfterUse, int useCooldown)
     {
-        temp_stats = tempoaryStats;
+        temp_stats = temporaryStats;
         equip_stats = equipStats;
         name = itemName;
         description = itemDescription;

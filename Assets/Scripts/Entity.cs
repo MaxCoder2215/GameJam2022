@@ -5,11 +5,14 @@ using UnityEngine;
 public class Entity 
 {
 
-    public Entity(Stats startingStats)
+    
 
     public Stats base_stats;
     public Stats current_stats;
 
-
+    public Entity()
+    {
+        
+    }
 
 }
