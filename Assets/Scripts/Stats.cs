@@ -26,6 +26,26 @@ public class Stats
         Morale = mR;
     }
 
+    public static Stats operator +(Stats a, Stats b)
+    {
+        Stats s = new Stats(a.Health, a.AttackDamage, a.AttackSpeed, a.Defense, a.CriticalRate, a.Gold, a.Morale);
+        s.Modify(b);
+        return s;
+    }
+
+    public static Stats operator -(Stats a, Stats b)
+    {
+        Stats s = new Stats(a.Health, a.AttackDamage, a.AttackSpeed, a.Defense, a.CriticalRate, a.Gold, a.Morale);
+        s.Health -= b.Health;
+        s.AttackDamage -= b.AttackDamage;
+        s.Defense -= b.Defense;
+        s.CriticalRate -= b.CriticalRate;
+        s.Gold -= b.Gold;
+        s.Morale -= b.Morale;
+
+        return s;
+    }
+
     // Modifies base stats permanently. 
     public void Modify(Stats statModifiers)
     {

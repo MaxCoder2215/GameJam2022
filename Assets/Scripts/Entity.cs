@@ -16,7 +16,11 @@ public class Entity
     // The entity's stats after bonuses.
     public Stats CurrentStats { get; set; }
 
+    public Stats effectedStats;
+
     public List<Item> Inventory {get; set;}
+
+    private List<Item> activeItems = new List<Item> ();
 
 
     public Entity(string name, uint team,Stats startingStats) : this(name, team,startingStats, null)
@@ -45,4 +49,25 @@ public class Entity
     {
 
     }
+
+    public void EquipItem(Item item)
+    {
+        BaseStats += item.EquipStats;
+        item.AdvanceEquiped(this);
+    }
+
+    public void ActivateItem(Item item)
+    {
+        foreach (Item i in this.activeItems)
+        {
+            if(i == item)
+            {
+                return;
+            }
+        }
+
+        activeItems.Add(item);
+        item.AdvanceActivate(this);
+    }
+
 }

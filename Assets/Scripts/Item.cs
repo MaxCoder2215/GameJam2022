@@ -22,6 +22,8 @@ public class Item
     // Permanent Stat increases.
     public Stats EquipStats { get; set; }
 
+    public bool equippded = false;
+
     // Constructor for an item that is either temporary or equiptable. 
     public Item(Stats stats, string itemName, string itemDescription, string effect, int turnCount, bool destroy, int cooldown)
     {
@@ -54,5 +56,13 @@ public class Item
         TempTurnCount = turnCount;
         DestroyAfterUse = destroy;
         UseCooldown = cooldown;
+    }
+
+    public virtual void AdvanceEquiped(Entity enity)
+    {
+    }
+
+    public virtual void AdvanceActivate(Entity entity)
+    {
     }
 }
