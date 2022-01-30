@@ -7,12 +7,12 @@ public class Player : Entity
     // The players chosen character, including any stats and items exclusive to the character. Can be traded. 
     public CharacterType characterType;
     // A list containing the contents of the Player's inventory. 
-    public List<Item> Iventory = new List<Item>();
+    
 
     // Constructor for the player. 
-    public Player(Stats startingStats)
+    public Player(Stats startingStats) : base(startingStats)
     {
-        this.setBaseStats(startingStats);
+        
     }
 
 

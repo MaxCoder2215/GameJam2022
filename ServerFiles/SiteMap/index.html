@@ -7,22 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <button onclick="setPlayer(1)" class="ToHide">Player 1</button>
-    <button onclick="setPlayer(2)" class="ToHide">Player 2</button>
-    <button onclick="setPlayer(3)" class="ToHide">Player 3</button>
-    <button onclick="setPlayer(4)" class="ToHide">Player 4</button>
+    <a href="http://localhost/asignplayer/1/Player1" class="button">Asign Player 1</a>
+    <br>
+    <a href="http://localhost/asignplayer/1/Player2" class="button">Asign Player 2</a>
+    <br>
+    <a href="http://localhost/asignplayer/1/Player3" class="button">Asign Player 3</a>
+    <br>
+    <a href="http://localhost/asignplayer/1/Player4" class="button">Asign Player 4</a>
+    <br>
 
     <script>
-        player = NaN;
-        if(document.cookie != NaN){
-            player = document.cookie;
-        }
-        console.log("player is " + player);
 
-        function setPlayer(x){
-            player = x;
-            document.cookie = "" + x;
-        }
     </script>
 </body>
 </html>

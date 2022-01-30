@@ -5,19 +5,27 @@ using UnityEngine;
 public class Entity 
 {
     // The entity's starting stats.
-    protected Stats baseStats;
+    protected Stats BaseStats { get; set; }
     // The entity's stats after bonuses.
-    protected Stats currentStats;
+    protected Stats CurrentStats { get; set; }
 
-    // Setter for the entity's base stats.
-    public void setBaseStats(Stats b)
+    public List<Item> Inventory {get; set;}
+
+    public Entity(Stats startingStats) : this(startingStats, null)
     {
-        baseStats = b;
+
     }
-
-    // Setter for the entity's temporary stats.
-    public void setCurrentStats(Stats c)
+    public Entity(Stats startingStats, List<Item> inventory)
     {
-        currentStats = c;
+        BaseStats = startingStats;
+        CurrentStats = startingStats;
+        if (inventory != null)
+        {
+            this.Inventory = inventory;
+        }
+        else
+        {
+            this.Inventory = new List<Item>();
+        }
     }
 }

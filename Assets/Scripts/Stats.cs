@@ -6,33 +6,33 @@ public class Stats
 {
 
     // Main Stats each Enity will possess.
-    public float health;
-    public float attackDamage;
-    public float attackSpeed;
-    public float defense;
-    public float criticalRate;
-    public float gold;
-    public float morale;
+    public float Health { get; set; }
+    public float AttackDamage { get; set; }
+    public float AttackSpeed { get; set; }
+    public float Defense { get; set; }
+    public float CriticalRate { get; set; }
+    public float Gold { get; set; }
+    public float Morale { get; set; }
 
     // Constructor
     public Stats (float hP, float aD, float aS, float dF, float cR, float gD, float mR)
     {
-        health = hP;
-        attackDamage = aD;
-        attackSpeed = aS;
-        defense = dF;
-        criticalRate = cR;
-        gold = gD;
-        morale = mR;
+        Health = hP;
+        AttackDamage = aD;
+        AttackSpeed = aS;
+        Defense = dF;
+        CriticalRate = cR;
+        Gold = gD;
+        Morale = mR;
     }
 
     // Modifies base stats permanently. 
     public void Modify(Stats statModifiers)
     {
-        health = statModifiers.health + health;
-        attackDamage = statModifiers.attackDamage + attackDamage;
-        attackSpeed = statModifiers.attackSpeed + attackSpeed;
-        defense = statModifiers.defense + defense;
-        criticalRate = statModifiers.criticalRate + criticalRate;
+        Health = statModifiers.Health + Health;
+        AttackDamage = statModifiers.AttackDamage + AttackDamage;
+        AttackSpeed = statModifiers.AttackSpeed + AttackSpeed;
+        Defense = statModifiers.Defense + Defense;
+        CriticalRate = statModifiers.CriticalRate + CriticalRate;
     }
 }

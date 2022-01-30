@@ -5,39 +5,39 @@ using UnityEngine;
 public class Item 
 {
     // Temporary Stat boosts.
-    public Stats tempStats;
+    public Stats TempStats { get; set; }
     // Permanent Stat increases.
-    public Stats equipStats;
+    public Stats EquipStats { get; set; }
     // Item name.
-    public string name;
+    public string Name { get; set; }
     // What it is.
-    public string description;
+    public string Description { get; set; }
     // What outside effects it may have.
-    public string outsideEffect;
+    public string OutsideEffect { get; set; }
     // How many turns its active. 
-    public int tempTurnCount;
+    public int TempTurnCount { get; set; }
     // Do we destroy it after it is used.
-    public bool destroyAfterUse;
+    public bool DestroyAfterUse { get; set; }
     // How often per action or battle the item can be used.
-    public int useCooldown; 
+    public int UseCooldown { get; set; }
 
     // Constructor for an item that is either temporary or equiptable. 
     public Item(Stats stats, string itemName, string itemDescription, string effect, int turnCount, bool destroy, int cooldown)
     {
         
-        name = itemName;
-        description = itemDescription;
-        outsideEffect = effect;
-        tempTurnCount = turnCount;
-        destroyAfterUse = destroy;
-        useCooldown = cooldown;
+        Name = itemName;
+        Description = itemDescription;
+        OutsideEffect = effect;
+        TempTurnCount = turnCount;
+        DestroyAfterUse = destroy;
+        UseCooldown = cooldown;
 
-        if (destroyAfterUse)
+        if (DestroyAfterUse)
         {
-            tempStats = stats;
+            TempStats = stats;
         } else
         {
-            equipStats = stats;
+            EquipStats = stats;
         }
        
     }
@@ -45,13 +45,13 @@ public class Item
     // Constructor for an item with both temporary stat increases and equipment stats. 
     public Item(Stats temporaryStats, Stats eStats, string itemName, string itemDescription, string effect, int turnCount, bool destroy, int cooldown)
     {
-        tempStats = temporaryStats;
-        equipStats = eStats;
-        name = itemName;
-        description = itemDescription;
-        outsideEffect = effect;
-        tempTurnCount = turnCount;
-        destroyAfterUse = destroy;
-        useCooldown = cooldown;
+        TempStats = temporaryStats;
+        EquipStats = eStats;
+        Name = itemName;
+        Description = itemDescription;
+        OutsideEffect = effect;
+        TempTurnCount = turnCount;
+        DestroyAfterUse = destroy;
+        UseCooldown = cooldown;
     }
 }
