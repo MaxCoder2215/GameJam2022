@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Item 
 {
-    // Temporary Stat boosts.
-    public Stats TempStats { get; set; }
-    // Permanent Stat increases.
-    public Stats EquipStats { get; set; }
     // Item name.
     public string Name { get; set; }
     // What it is.
@@ -20,6 +16,11 @@ public class Item
     public bool DestroyAfterUse { get; set; }
     // How often per action or battle the item can be used.
     public int UseCooldown { get; set; }
+
+    // Temporary Stat boosts.
+    public Stats TempStats { get; set; }
+    // Permanent Stat increases.
+    public Stats EquipStats { get; set; }
 
     // Constructor for an item that is either temporary or equiptable. 
     public Item(Stats stats, string itemName, string itemDescription, string effect, int turnCount, bool destroy, int cooldown)

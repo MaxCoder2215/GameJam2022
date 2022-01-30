@@ -10,7 +10,7 @@ public class Player : Entity
     
 
     // Constructor for the player. 
-    public Player(Stats startingStats) : base(startingStats)
+    public Player(string name, uint team, Stats startingStats) : base(name, team, startingStats)
     {
         
     }

@@ -4,18 +4,27 @@ using UnityEngine;
 
 public class Entity 
 {
+    public string Name { get; set; }
+
+    /// <summary>
+    /// Current Team for enemy to fight with
+    /// </summary>
+    public uint Team {get; set;}
+
     // The entity's starting stats.
-    protected Stats BaseStats { get; set; }
+    public Stats BaseStats { get; set; }
     // The entity's stats after bonuses.
-    protected Stats CurrentStats { get; set; }
+    public Stats CurrentStats { get; set; }
 
     public List<Item> Inventory {get; set;}
 
-    public Entity(Stats startingStats) : this(startingStats, null)
+
+    public Entity(string name, uint team,Stats startingStats) : this(name, team,startingStats, null)
     {
 
     }
-    public Entity(Stats startingStats, List<Item> inventory)
+
+    public Entity(string name, uint team,Stats startingStats, List<Item> inventory)
     {
         BaseStats = startingStats;
         CurrentStats = startingStats;
@@ -27,5 +36,13 @@ public class Entity
         {
             this.Inventory = new List<Item>();
         }
+
+        this.Team = team;
+        this.Name = name;
+    }
+
+    public void TakeTurn(List<Entity> inBattle )
+    {
+
     }
 }

@@ -34,7 +34,9 @@ public class GameStateManger : MonoBehaviour
         Item item = new Item(statsTwo, testState, "avg", "give me avg everything", "", 5, false, 5);
 
         Stats person = new Stats(10, 10, 10, 10, 10, 10, 10);
-        Entity entity = new Entity(person);
+        List<Item> items = new List<Item>();
+        items.Add(item);
+        Entity entity = new Entity("bob",0,person, items);
 
         Debug.Log(JsonConvert.SerializeObject(entity));
     }
