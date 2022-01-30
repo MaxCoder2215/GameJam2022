@@ -6,6 +6,7 @@ static class Program
 
     static void Main()
     {
+        TCPServer.Start();
         using (var host = new NancyHost(new Uri("http://localhost:80")))
         {
             host.Start();
@@ -25,6 +26,6 @@ static class Program
 
     public static void GivePlayerItem(int player, string itemID)
     {
-
+        TCPServer.Messages.Enqueue($"Hello player {player} requests item {itemID}"); ;
     }
 }
