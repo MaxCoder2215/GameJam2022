@@ -11,16 +11,19 @@ public class Stats
     public float attackSpeed;
     public float defense;
     public float criticalRate;
-    public float gold; 
+    public float gold;
+    public float morale;
 
     // Constructor
-    public Stats (float hP, float aD, float aS, float dF, float cR)
+    public Stats (float hP, float aD, float aS, float dF, float cR, float gD, float mR)
     {
         health = hP;
         attackDamage = aD;
         attackSpeed = aS;
         defense = dF;
         criticalRate = cR;
+        gold = gD;
+        morale = mR;
     }
 
     // Modifies base stats permanently. 
