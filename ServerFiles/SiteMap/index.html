@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="setPlayer(1)" class="ToHide">Player 1</button>
+    <button onclick="setPlayer(2)" class="ToHide">Player 2</button>
+    <button onclick="setPlayer(3)" class="ToHide">Player 3</button>
+    <button onclick="setPlayer(4)" class="ToHide">Player 4</button>
+
+    <script>
+        player = NaN;
+        if(document.cookie != NaN){
+            player = document.cookie;
+        }
+        console.log("player is " + player);
+
+        function setPlayer(x){
+            player = x;
+            document.cookie = "" + x;
+        }
+    </script>
+</body>
+</html>

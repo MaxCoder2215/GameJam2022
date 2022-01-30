@@ -5,11 +5,15 @@ using UnityEngine;
 public class Player : Entity
 {
     // The players chosen character, including any stats and items exclusive to the character. Can be traded. 
-    public  CharacterType character_type;
+    public CharacterType characterType;
+    // A list containing the contents of the Player's inventory. 
+    public List<Item> Iventory = new List<Item>();
 
-    public Item[] Iventory; 
-
-
+    // Constructor for the player. 
+    public Player(Stats startingStats)
+    {
+        this.setBaseStats(startingStats);
+    }
 
 
 }

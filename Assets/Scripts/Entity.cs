@@ -2,21 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Entity : MonoBehaviour
+public class Entity 
 {
-    private Stats BaseStats;
-    private Stats CurrentStats;
-    
-    
-    // Start is called before the first frame update
-    void Start()
+    // The entity's starting stats.
+    protected Stats baseStats;
+    // The entity's stats after bonuses.
+    protected Stats currentStats;
+
+    // Setter for the entity's base stats.
+    public void setBaseStats(Stats b)
     {
-        
+        baseStats = b;
     }
 
-    // Update is called once per frame
-    void Update()
+    // Setter for the entity's temporary stats.
+    public void setCurrentStats(Stats c)
     {
-        
+        currentStats = c;
     }
 }

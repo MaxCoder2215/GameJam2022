@@ -23,12 +23,20 @@ Mark Richardson
 Lucas Kasinger
 
 Travis Sies
+
+Cody Housman
 <br></br>
 <p><strong>Art Team:</strong></p>
+
 Lexi Snow
+
+Loise Wines
 <br></br>
 <p><strong>Morale Support:</strong></p>
+
 Mikel Adams
+
+Lane Satchwell
 <br></br>
 
 
