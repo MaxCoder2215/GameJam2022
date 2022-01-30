@@ -67,7 +67,7 @@ namespace GameJam2022Server
                 }
 
                 Console.WriteLine($"Finding {context.Request.Query.item} for player {player}");
-                
+                Program.GivePlayerItem(player, context.Request.Query.item);
                 return true;
             });
         }
