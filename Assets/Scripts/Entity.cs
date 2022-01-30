@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class Entity 
 {
-    public Stats baseStats;
-    public Stats currentStats;
+    // The entity's starting stats.
+    protected Stats baseStats;
+    // The entity's stats after bonuses.
+    protected Stats currentStats;
 
-    public Entity()
+    // Setter for the entity's base stats.
+    public void setBaseStats(Stats b)
     {
-        
+        baseStats = b;
     }
 
+    // Setter for the entity's temporary stats.
+    public void setCurrentStats(Stats c)
+    {
+        currentStats = c;
+    }
 }
