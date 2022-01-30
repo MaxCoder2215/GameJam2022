@@ -22,4 +22,9 @@ static class Program
         PlayerIP.Remove(ip);
         PlayerIP.Add(ip, player);  
     }
+
+    public static void GivePlayerItem(int player, string itemID)
+    {
+
+    }
 }
