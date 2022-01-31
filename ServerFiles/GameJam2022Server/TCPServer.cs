@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 static class TCPServer
 {
@@ -78,6 +79,7 @@ static class TCPServer
                         stream.Write(msg, 0, msg.Length);
                         Console.WriteLine("Sent: {0}", msgtext);
                     }
+                    //JsonConvert.SerializeObject(obj);
                 }
 
                 // Shutdown and end connection
