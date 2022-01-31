@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.Events;
 
-public class Entity 
+public class Entity : ITickable
 {
     public string Name { get; set; }
 
@@ -20,7 +21,13 @@ public class Entity
 
     public List<Item> Inventory {get; set;}
 
-    private List<Item> activeItems = new List<Item> ();
+    protected List<Item> activeItems = new List<Item> ();
+
+    protected int currentTick = 0;
+    protected bool isAlive = true;
+
+    public UnityEvent OnDie = new UnityEvent();
+    public UnityEvent OnTakeTurn = new UnityEvent();
 
 
     public Entity(string name, uint team,Stats startingStats) : this(name, team,startingStats, null)
@@ -45,9 +52,20 @@ public class Entity
         this.Name = name;
     }
 
-    public void TakeTurn(List<Entity> inBattle )
+    public void GameTick()
     {
+        currentTick++;
 
+        if(currentTick > CurrentStats.AttackSpeed && isAlive)
+        {
+            currentTick = 0;
+            TakeTurn();
+        }
+    }
+
+    public void TakeTurn()
+    {
+        OnTakeTurn.Invoke();
     }
 
     public void EquipItem(Item item)
@@ -68,6 +86,20 @@ public class Entity
 
         activeItems.Add(item);
         item.AdvanceActivate(this);
+    }
+    
+    private void CheckHealth()
+    {
+        if(CurrentStats.Health <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        isAlive = false;
+
     }
 
 }
