@@ -9,6 +9,7 @@ Michael Hoff
 <br></br>
 <p><strong>Programming Team:</strong></p>
 Max Schaad
+
 William Kaminski
 <br></br>
 <p><strong>Game Design Team:</strong></p>
